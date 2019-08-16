@@ -1,0 +1,47 @@
+#First Program
+def intreverse(n):
+  rev=0
+  try:
+    while(n!=0):
+      rem=n%10
+      rev=rev*10+rem
+      n=int(n/10)
+  except:
+    print("False")
+  return rev  
+
+#Second Program
+def matched(str):
+    count = 0
+    for i in str:
+        if i == "(":
+            count += 1
+        elif i == ")":
+            count -= 1
+        if count < 0:
+            return False
+    return count == 0
+  
+#Third Program
+def sumprimes(l):
+    primeNum = []
+    for item in l:
+        is_prime = True
+        if(item >= 2):
+            maxInt = int(item ** 0.5) + 1
+            for i in range(2, maxInt):
+                if(item % i == 0):
+                    is_prime = False
+                    break
+            if(is_prime):
+                primeNum.append(item)
+    return(sum(primeNum))
+
+intreverse(368)
+intreverse(798798)
+intreverse(7)
+matched("(7)(a")
+matched("a)*(?")
+matched("((jkl)78(A)&l(8(dd(FJI:),):)?)")
+sumprimes([3,3,1,13])
+sumprimes([2,4,6,9,11])
